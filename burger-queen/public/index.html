@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -28,6 +29,8 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Esta estiqueta nonscript le dice al usuario que necesita js en el navegador
+    en caso esté deshabilitado-->
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +42,26 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCWWbCiIGl-6RMTpiNCkDPj90jFcQQnvp8",
+        authDomain: "burger-queen-16c95.firebaseapp.com",
+        databaseURL: "https://burger-queen-16c95.firebaseio.com",
+        projectId: "burger-queen-16c95",
+        storageBucket: "burger-queen-16c95.appspot.com",
+        messagingSenderId: "248833030673",
+        appId: "1:248833030673:web:ddf6fe7e9b2eca3ef20fb0"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>
