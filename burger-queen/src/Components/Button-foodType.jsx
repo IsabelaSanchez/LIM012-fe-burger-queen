@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Menu from '../assets/white-icons/menu-white.svg';
 import Drinks from '../assets/white-icons/drinks-white.svg';
 import Breakfast from '../assets/white-icons/breakfast-white.svg';
-import menuBrown from '../assets/brown-icons/menu-brown.svg';
-import breakfastBrown from '../assets/brown-icons/breakfast-brown.svg';
-import drinksBrown from '../assets/brown-icons/drinks-brown.svg';
+// import menuBrown from '../assets/brown-icons/menu-brown.svg';
+// import breakfastBrown from '../assets/brown-icons/breakfast-brown.svg';
+// import drinksBrown from '../assets/brown-icons/drinks-brown.svg';
 
 const ButtonFoodType = ({ food, icon }) => (
   <div className="flexColumn containerFood">

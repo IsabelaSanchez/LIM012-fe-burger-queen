@@ -1,0 +1,15 @@
+
+.entered-order-container{
+    width: 300px;
+    height: 200px;
+    background-color: $brown;
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 15px;
+}
+.entered-order-info{
+    position: absolute;
+    z-index: 1;
+    color: $white;
+}

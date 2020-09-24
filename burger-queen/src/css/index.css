@@ -349,6 +349,37 @@
   font-size: 1em;
 }
 
+.title-orders-kitchen {
+  background-color: #F1C010;
+  width: 463px;
+  height: 92px;
+  border-radius: 25px;
+  color: #422112;
+  margin-top: 50px;
+  font-size: 30px;
+  justify-content: center;
+  text-align: center;
+}
+.title-orders-kitchen p {
+  padding-top: 30px;
+}
+
+.entered-order-container {
+  width: 300px;
+  height: 200px;
+  background-color: #422112;
+  font-size: 18px;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.entered-order-info {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -1,17 +1,379 @@
-/* Error: Undefined variable.
- *   ,
- * 3 |   display: $flex;
- *   |            ^^^^^
- *   '
- *   src\sass\app.scss 3:12  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 3 \2502    display: $flex;\d\a   \2502             ^^^^^\a   \2575 \a   src\\sass\\app.scss 3:12  root stylesheet";
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
+
+.start {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.center {
+  width: 85vw;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.App-background {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  box-sizing: border-box;
+}
+
+.App-background::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-position: center center;
+  background-image: url(../assets/fondo-burger-queen.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(35%);
+}
+
+.App-background-inside {
+  position: relative;
+}
+
+.App-logo {
+  width: 100%;
+}
+
+.comp-kitchen {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.buttonNone {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.ButtonInit {
+  background-color: #F1C010;
+  width: 180px;
+  height: 70px;
+  border-radius: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+}
+
+.container-button {
+  width: 300px;
+  height: 280px;
+  border-radius: 60px;
+  border: 7px solid #FFFFFF;
+  background: rgba(255, 255, 255, 0.7);
+  margin: 100px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 0%;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=app.css.map */
+/* Waiter Choice */
+.headerMain {
+  background-color: #422112;
+  text-align: center center;
+  text-align: center;
+  width: 100vw;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.waiter-choice {
+  width: 508px;
+  height: 692px;
+  background-color: #F1C010;
+  border-radius: 35px;
+  margin: 90px;
+  box-sizing: border-box;
+}
+
+.strong-subtitle {
+  font-size: 35px;
+  display: flex;
+  padding: 100px;
+  padding-bottom: 40px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.special-subtitle {
+  padding-top: 0%;
+  padding-bottom: 45px;
+}
+
+.placeOrders {
+  padding-left: 174px;
+  padding-bottom: 40px;
+  padding-right: 174px;
+}
+
+.subtitle {
+  font-size: 29px;
+  width: 100vw;
+  padding-left: 125px;
+  padding-right: 125px;
+  font-family: "Roboto", sans-serif;
+}
+
+.button-brown {
+  width: 160px;
+  height: 70px;
+  background-color: #422112;
+  font-size: 22px;
+  border-radius: 18px;
+  color: #fff;
+  padding: 10px;
+  margin-left: 170px;
+  margin-right: 170px;
+}
+
+.input-name {
+  width: 250px;
+  font-size: 25px;
+  height: 40px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.clientValue {
+  font-size: 30px;
+  color: #422112;
+  margin: 10px;
+}
+
+.colorLetterBrown {
+  color: #422112;
+}
+
+.folder {
+  background-color: #F1C010;
+  width: 366px;
+  height: 780px;
+  border-radius: 30px 30px 0px 30px;
+  margin-top: 50px;
+}
+
+.folderTwo {
+  background-color: #F1C010;
+  width: 316px;
+  height: 660px;
+  border-radius: 0 30px 30px 0px;
+  margin-top: 170px;
+}
+
+.showHour {
+  display: inline-flex;
+  margin-left: 225px;
+  font-size: 40px;
+  position: fixed;
+}
+
+.blockEnd {
+  display: block;
+  position: absolute;
+  top: 635px;
+  left: 26px;
+}
+
+.justlist {
+  display: block;
+  position: absolute;
+  top: 134px;
+  left: 13px;
+}
+
+.containerAllFood {
+  width: 595px;
+  height: 580px;
+  background-color: #F1C010;
+  border-radius: 35px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.margin-size40 {
+  margin-left: 40px;
+}
+
+.margin-size15 {
+  margin-left: 15px;
+}
+
+.containerOptionFood {
+  color: #F1C010;
+  width: 185px;
+  margin-left: 25px;
+  margin-top: 50px;
+  height: 175px;
+  border-radius: 25px;
+  background-color: #422112;
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.typeFood {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  justify-content: center;
+  display: inline-flex;
+}
+
+.containerFood {
+  padding: 5px;
+}
+
+.selectChange {
+  background-color: #F1C010;
+  color: #422112;
+}
+
+.buttonSelectFood {
+  background-color: #422112;
+  border-radius: 20px;
+  width: 255px;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.orderInfo {
+  position: absolute;
+  z-index: 1;
+  width: 650px;
+  height: 750px;
+  margin-top: 50px;
+  padding: 15px;
+}
+
+.containerOrderList {
+  margin-top: 20px;
+}
+
+.containerOrderList::webkit-scrollbar-thumb {
+  background: #e77575;
+  border-radius: 4px;
+}
+
+.containerOrderList::-webkit-scrollbar-track {
+  background-color: #e9e7e7;
+  border-radius: 6px;
+}
+
+.orderList {
+  background-color: #422112;
+  color: #fff;
+  width: 636px;
+  height: 68px;
+  padding: 2px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.containerQuantityByProducts {
+  height: 40px;
+  width: 30px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.containerQuantityByProducts span {
+  color: #422112;
+  font-size: 25px;
+}
+
+.buttonByProduct {
+  height: 100%;
+  font-size: 17px;
+  color: #fff;
+}
+
+.upperText {
+  text-transform: uppercase;
+  display: block;
+}
+
+.fontSize25 {
+  font-size: 25px;
+}
+
+.spaceInter {
+  margin-right: 18px;
+  margin-top: 15px;
+}
+
+.toggleClass {
+  background-color: #F1C010;
+  color: #422112;
+  border-radius: 25px;
+}
+
+.sendAndNullButton {
+  background-color: #422112;
+  color: white;
+  width: 140px;
+  height: 60px;
+  border-radius: 20px;
+  font-size: 1em;
+}
+
+.title-orders-kitchen {
+  background-color: #F1C010;
+  width: 463px;
+  height: 92px;
+  border-radius: 25px;
+  color: red;
+}
+
+.ola {
+  background-color: red;
+  width: 100px;
+  height: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(241, 221, 168, 0.5);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/*# sourceMappingURL=app.css.map */

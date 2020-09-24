@@ -16,7 +16,7 @@ import {
   MenuView,
   DrinksView,
 } from './FoodByType';
-import Clock from './clock';
+import Clock from './Clock';
 
 const DoOrders = () => {
   const [breakfastData, setBreakfatsData] = useState([]);
@@ -29,8 +29,7 @@ const DoOrders = () => {
   const initialStateOrder = {
     name: '',
     items: [],
-    totalPrice: [0],
-    hour: new Date().toLocaleTimeString(),
+    hour: new Date().getTime(),
     status: 'pending',
   };
   const [order, setOrder] = useState(initialStateOrder);
@@ -38,7 +37,7 @@ const DoOrders = () => {
     const { name, value } = e.target;
     setOrder({ ...order, [name]: value });
   };
-  const addPropertiesToOrder = (price, name, id, amount, total) => {
+  const addPropertiesToOrder = (price, name, id) => {
     const item = {
       amount: 1,
       price,
@@ -46,10 +45,14 @@ const DoOrders = () => {
       id,
       total: 1 * price,
     };
-    const arrItems = order.items.push(item);
-    const findID = order.items.find((e) => e.id === id);
-    // aqui poner una condicional para que no agregue el mismo item si ya lo encontró en el array
-    console.log(findID);
+    const findID = order.items.find((element) => element.id === id);
+    let arrItems = [];
+    if (findID === null) {
+      console.log(findID);
+      findID.amount += 1;
+    } else {
+      arrItems = order.items.push(item);
+    }
 
     setOrder((prevState) => ({
       ...prevState,
@@ -72,14 +75,7 @@ const DoOrders = () => {
     setOrder({ ...order, items: itemSelected.amount });
     totalPriceByProduct(id, itemSelected.amount);
   };
-  // const [count, setCount] = useState(1);
-  // const addOne = (id) => {
-  //   let newAmount = 1;
-  //   const compare = order.items.find((obj) => obj.id === id);
-  //   console.log(compare);
-  //   setOrder((prevState) => ({...prevState, item: [...order.items]}));
-  //   totalPriceByProduct(id, count + 1);
-  // };
+
   const lessOne = (id) => {
     const itemSelected = order.items.find((e) => e.id === id);
     if (itemSelected.amount > 1) {
@@ -172,42 +168,42 @@ const DoOrders = () => {
             </p>
             <div className="containerOrderList">
               <div className="justlist">
-              <div className="containOrderList">
-                {
-                order.items.map((obj) => (
-                  <div className="orderList flexRow" key={obj.id}>
-                    <button type="button" onClick={() => addOne(obj.id)} className="buttonNone">
-                      <img src={AddIcon} alt="" />
-                    </button>
-                    <div className="containerQuantityByProducts">
-                      <span>{obj.amount}</span>
+                <div className="containOrderList">
+                  {
+                  order.items.map((obj) => (
+                    <div className="orderList flexRow" key={obj.id}>
+                      <button type="button" onClick={() => addOne(obj.id)} className="buttonNone">
+                        <img src={AddIcon} alt="" />
+                      </button>
+                      <div className="containerQuantityByProducts">
+                        <span>{obj.amount}</span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => lessOne(obj.id)}
+                        className="buttonNone"
+                      >
+                        <img src={LessIcon} alt="" />
+                      </button>
+                      <div className="spaceInter">
+                        <span className="fontSize25 upperText">{obj.name}</span>
+                      </div>
+                      <div className="spaceInter">
+                        <span className="fontSize25 upperText">
+                          S/
+                          {obj.total}
+                        </span>
+                      </div>
+                      <button type="button" onClick={() => deleteItem(obj.id)} className="buttonNone">
+                        <img src={DeleteIcon} alt="" />
+                      </button>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => lessOne(obj.id)}
-                      className="buttonNone"
-                    >
-                      <img src={LessIcon} alt="" />
-                    </button>
-                    <div className="spaceInter">
-                      <span className="fontSize25 upperText">{obj.name}</span>
-                    </div>
-                    <div className="spaceInter">
-                      <span className="fontSize25 upperText">
-                        S/
-                        {obj.total}
-                      </span>
-                    </div>
-                    <button type="button" onClick={() => deleteItem(obj.id)} className="buttonNone">
-                      <img src={DeleteIcon} alt="" />
-                    </button>
-                  </div>
-                ))
-              }
+                  ))
+                }
+                </div>
               </div>
-              </div>
-                {console.log(order)}
-              </div>
+              {console.log(order)}
+            </div>
             <div className="blockEnd">
               <div className="clientValue">
                 <span>
@@ -229,12 +225,12 @@ const DoOrders = () => {
                 >
                   ANULAR
                 </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 

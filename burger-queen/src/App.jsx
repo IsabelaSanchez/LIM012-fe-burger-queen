@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import PlaceAndViewOrders from './Components/Waiter-choice';
 import DoOrders from './Components/Do-orders';
+import Kitchen from './views/Kitchen';
 
 const App = () => (
   <Router>
@@ -19,6 +20,9 @@ const App = () => (
         </Route>
         <Route path="/orders-menu">
           <DoOrders />
+        </Route>
+        <Route path="/kitchen">
+          <Kitchen />
         </Route>
       </Switch>
     </div>

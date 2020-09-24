@@ -48,3 +48,25 @@ export const getPriceAndNameDrinks = () => food.where('drinks', '==', true).get(
 export const sendOrder = (obj) => {
   db.collection('orders').doc().set(obj);
 };
+
+export const getOrders = () => db.collection('orders').get().then((snapshot) => {
+  const arrOrders = [];
+  snapshot.forEach((doc) => {
+    const objOrder = {
+      hour: doc.data().hour,
+      items: doc.data().items,
+      name: doc.data().name,
+      status: doc.data().status,
+      id: doc.id,
+    };
+    arrOrders.push(objOrder);
+  });
+  return arrOrders;
+})
+  .catch((err) => console.log(err));
+
+export const updateStatus = (id, newStatus) => {
+  db.collection('orders').doc(id).update({
+    status: newStatus,
+  });
+};
